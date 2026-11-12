@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Varg — Jeux</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <b>✦ Varg</b>
+  <a href="index.html" >Accueil</a><a href="persos.html" >Persos</a><a href="jeux.html" aria-current="page">Jeux</a>
+  <button id="themeBtn" title="Changer de thème">🌓</button>
+</nav>
+
+<section>
+  <h2>Mes jeux vidéo 🎮</h2>
+  <p class="sub">Ce à quoi je joue.</p>
+  <div class="grid" id="gameGrid"></div>
+</section>
+
+<footer>Fait avec ✦ par Varg · Site personnel en construction</footer>
+
+<script src="common.js"></script>
+<script>
+const games=[ // [emoji, nom, note, heures, image]
+ ["⚔️","Elden Ring","9/10","170 h","Elden%20ring.webp"],
+ ["🗡️","Ghost of Tsushima","8/10","80 h","GOT.jpg"],
+ ["🔫","CS2","8/10","200 h","CS2.jpg"]
+];
+games.forEach(g=>{
+ const c=document.createElement('div');c.className='card game';
+ c.innerHTML=`<div class="ico">${g[0]}<img src="${g[4]}" alt="" onerror="this.remove()"></div><div><h3>${g[1]}</h3><p>⭐ ${g[2]} · ⏱️ ${g[3]}</p></div>`;
+ $('gameGrid').appendChild(c);
+});
+reveal();
+</script>
+</body>
+</html>
